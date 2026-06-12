@@ -19,8 +19,6 @@
 - [Step 4 — Add Bing grounding (web search)](#step-4-add-bing-grounding-web-search)
 - [Step 5 — Add Code Interpreter](#step-5-add-code-interpreter)
 - [Step 6 — Add an MCP server tool](#step-6-add-an-mcp-server-tool-)
-- [Step 7 — Run an evaluation against the agent](#step-7-run-an-evaluation-against-the-agent-)
-- [Step 8 — Run a Red Teaming scan against the agent](#step-8-run-a-red-teaming-scan-against-the-agent-️)
 - [Step 9 — Publish Sous Snark to Agent 365](#step-9-publish-sous-snark-to-agent-365)
 - [Appendix — Demo prompts (one per tool)](#appendix-demo-prompts-one-per-tool)
 
