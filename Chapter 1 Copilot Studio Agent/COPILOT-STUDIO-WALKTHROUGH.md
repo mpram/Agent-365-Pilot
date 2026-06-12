@@ -52,13 +52,10 @@ flowchart LR
 - [Step 3: Configure knowledge & generative AI](#step-3-configure-knowledge--generative-ai)
 - [Step 4: Add the Weather tool (Wildpaws Weather)](#step-4-add-the-weather-tool-wildpaws-weather)
 - [Step 5: Add the Currency tool (Wildpaws FX)](#step-5-add-the-currency-tool-wildpaws-fx)
-- [Step 6: Create the connected agent (Wildpaws Expense Tracker)](#step-6-create-the-connected-agent-wildpaws-expense-tracker-optional)
-- [Step 7: Connect Expense Tracker to Trail Guide](#step-7-connect-expense-tracker-to-trail-guide-optional)
-- [Step 8: Publish to Microsoft Teams](#step-8-publish-to-microsoft-teams-optional)
-- [Step 9: Verify the Agent 365 registry](#step-9-verify-the-agent-365-registry)
-- [Demo script: prompts that exercise EVERY tool, knowledge source, and connected agent](#demo-script-prompts-that-exercise-every-tool-knowledge-source-and-connected-agent)
+- [Step 6: Create the connected agent (Wildpaws Expense Tracker)](#step-6-create-the-connected-agent-wildpaws-expense-tracker)
+- [Step 7: Connect Expense Tracker to Trail Guide](#step-7-connect-expense-tracker-to-trail-guide)
+- [Step 8: Publish to Microsoft Teams](#step-8-publish-to-microsoft-teams)
 - [Appendix: OpenAPI specs (reference)](#appendix-openapi-specs-reference)
-- [What you accomplished](#what-you-accomplished)
 - [Troubleshooting](#troubleshooting)
 
 ---
@@ -534,3 +531,4 @@ When you open **https://admin.cloud.microsoft** → **Agents** → **All agents*
 - The setting takes effect going forward; allow a short period (and a page refresh) for the report to repopulate. Activity reports can take **up to 48 hours** to fully reflect the change.
 - To re-enable privacy later, repeat the steps and **re-check** the box.
 - If the **Reports** option or the checkbox is greyed out, confirm your account holds the **Global Administrator** role — other admin roles cannot change this setting.
+
