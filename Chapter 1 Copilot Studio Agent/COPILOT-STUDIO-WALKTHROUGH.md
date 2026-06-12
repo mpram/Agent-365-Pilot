@@ -507,18 +507,6 @@ paths:
 
 ---
 
-## What you accomplished
-
-- Built a Copilot Studio agent with custom instructions, conversation starters, web search, and three website knowledge sources
-- Created two REST API tools from OpenAPI specs (no Power Apps custom connector dance needed)
-- Created a second agent and wired it as a connected sub-agent
-- Published both to Teams and confirmed all Agent 365 registry tabs populate
-- All without a Microsoft 365 Copilot license. Copilot Studio's free trial alone
-
-To rebuild from scratch in a different tenant, follow Steps 0 to 9 in order using the YAML specs in this folder. Total time: 30–45 min.
-
----
-
 ## Troubleshooting
 
 ### Active users show a scrambled User principal name instead of a real email
