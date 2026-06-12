@@ -1,6 +1,25 @@
-# 🔐 Conditional Access for Agents
+# Configure Entra for Agent 365
 
-## What you'll build
+## Index
+
+- [Step 1 — Create the Conditional Access policy (Report-only)](#step-1--create-the-conditional-access-policy-report-only)
+- [Step 2 — Tag the agents with custom security attributes](#step-2--tag-the-agents-with-custom-security-attributes)
+- [Step 3 — Notify the sponsor's manager when sponsorship changes](#step-3--notify-the-sponsors-manager-when-sponsorship-changes)
+- [Step 4 — Observe the logs](#step-4--observe-the-logs)
+- [Step 5 — Generate an alert you can observe](#step-5--generate-an-alert-you-can-observe)
+- [Limitations (from the docs)](#limitations-from-the-docs)
+- [Appendix — Does this apply to Copilot Studio agents?](#appendix--does-this-apply-to-copilot-studio-agents)
+- [Reference](#reference)
+
+---
+
+## Prerequisites
+
+---
+
+## Step 1 — Create the Conditional Access policy (Report-only)
+
+### What you'll build
 
 ```mermaid
 flowchart LR
@@ -12,26 +31,6 @@ flowchart LR
   LA --> AR[Azure Monitor<br/>alert rule]
   AR --> N[📣 Email / Teams / webhook]
 ```
-
----
-
-## Why this matters (what students learn)
-
-> This pilot includes **two agents**: **wildpaws** (the Copilot Studio travel concierge) and **Sous Snark** (the AI Foundry hosted agent). The policy below targets **both** so you observe every agent created in this pilot, not just one.
-
-- **Agents have their own identity.** Neither wildpaws nor Sous Snark is a user — each is an Entra *agent identity* derived from a *blueprint*. Conditional Access can target them directly.
-- **CA applies to agents, not just people.** The same policy engine that gates employee sign-ins now gates AI agents.
-- **Report-only = safe observation.** Watch the agent's behavior without breaking it, then promote to enforcement.
-- **The token-request → sign-in-log → Log Analytics → alert pipeline** is the real-world way to monitor what an autonomous agent is doing.
-- **Block is the only control for agent identities** — there's no MFA/interactive remediation for a non-human, which is why agent governance differs from user governance.
-
----
-
-## Prerequisites
-
----
-
-## Step 1 — Create the Conditional Access policy (Report-only)
 
 1. Sign in to the **Microsoft Entra admin center** (`https://entra.microsoft.com`) → **Entra ID → Conditional Access → Policies → New policy**.
 2. Name it: `Observe – Pilot agents access`.
@@ -206,3 +205,4 @@ The Diagnostic settings → Log Analytics → alert-rule pipeline (Step 5) works
 - [Target agent identities in Conditional Access](https://learn.microsoft.com/en-us/entra/identity/conditional-access/howto-target-agent-identities)
 - [Recommended policies for autonomous agents](https://learn.microsoft.com/en-us/entra/identity/conditional-access/policy-autonomous-agents)
 - [Lifecycle Workflow built-in tasks — Send email to manager about sponsorship changes](https://learn.microsoft.com/en-us/entra/id-governance/lifecycle-workflow-tasks#send-email-to-manager-about-sponsorship-changes)
+
