@@ -7,7 +7,6 @@
 - [Step 3 — Notify the sponsor's manager when sponsorship changes](#step-3--notify-the-sponsors-manager-when-sponsorship-changes)
 - [Step 4 — Observe the logs](#step-4--observe-the-logs)
 - [Step 5 — Generate an alert you can observe](#step-5--generate-an-alert-you-can-observe)
-- [Limitations (from the docs)](#limitations-from-the-docs)
 - [Appendix — Does this apply to Copilot Studio agents?](#appendix--does-this-apply-to-copilot-studio-agents)
 - [Reference](#reference)
 
@@ -159,14 +158,6 @@ Set the rule to run every 5 min over the last 5 min, threshold "results > 0", an
 
 ---
 
-## Limitations (from the docs)
-
-- CA only protects resources secured by **Microsoft Entra ID**. If the agent reaches a tool via an **API key** (e.g. the Microsoft Learn MCP server is *Unauthenticated*), CA never sees it.
-- Intermediate token exchanges at the `AAD Token Exchange Endpoint: Public` (Resource ID `fb60f99c-7a34-4190-8149-302f77469936`) are **not** subject to CA.
-- A policy targeting the **agent identity / blueprint** does **not** cover an agent's separate *user account* — that needs a separate "agent users" policy.
-
----
-
 ## Appendix — Does this apply to Copilot Studio agents?
 
 **Yes**, with important differences from Foundry hosted agents.
@@ -176,11 +167,6 @@ When **Entra Agent Identity is enabled at the environment level** (Power Platfor
 
 - Legacy agents (created before March 18, 2026, or before tenant opt-in) use traditional **app registrations** instead, and can be migrated to Agent ID.
 - Find the GUID in **Copilot Studio → Settings → Advanced → Metadata → "Entra Agent ID"**.
-
-### ⚠️ Enforcement is Teams-channel-only (today)
-> Conditional Access on the agent identity **currently applies only when the agent runs in Microsoft Teams**, because Teams is the only channel that performs end-to-end authentication using the Entra Agent ID token. Other channels still call connectors using the Power Platform connector auth flow, so admins can **see** the scopes but **CA on the agent identity isn't yet evaluated** for those calls.
-
-So CA policies + logs fire for the **Teams channel** path only. The in-studio test panel and other channels won't generate agent-identity CA evaluations yet.
 
 ### Where to find the logs (Copilot Studio)
 - **Entra ID → Monitoring → Audit/Sign-in logs**, filter **Application contains: "Copilot Studio"** + Conditional Access = `Failure`, **or**
