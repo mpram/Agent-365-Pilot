@@ -338,12 +338,6 @@ When you publish **People in your org**, Agent 365 doesn't auto-trust the agent 
 
 You'll assign the **`Agent365.Observability.OtelWrite`** app role (id `8f71190c-00c8-461d-a63b-f74abde9ba52`) on the **`Agent365Observability`** service principal to the agent's **Entra Agent Identity** service principal.
 
-> 🟠 **Critical pick the RIGHT principal.** A Hosted Foundry agent has **two** identities in your tenant:
-> - The **workspace managed identity** (e.g. `sous-snark-fdy-eus2`, principalId looks like `bf15b047-…`). This is the Foundry resource's MI used for ARM/data-plane calls.
-> - The **Entra Agent Identity** (e.g. `sous-snark-fdy-eus2-sous-snark-proj-sous-snark-AgentIdentity`, a `#microsoft.graph.agentIdentity` SP). This is the principal Foundry signs **telemetry** with.
->
-> The OtelWrite role MUST go on the **Entra Agent Identity** (the second one). Assigning it to the workspace MI silently does nothing Agent 365 still 401s, Activity tab still empty. Ask me how I know. 🙃
-
 **Prerequisites**
 - Azure CLI (`az`) signed in with **Global Admin** or **Application Administrator** permissions.
 - The agent's **Entra Agent ID** (a GUID). Find it in **M365 admin center → Agents → sous-snark → Details → Entra agent ID** (visible in the portal screenshot from Step 9g). It looks like `27b331e6-c395-4559-a3e7-77b2f96d1a7c` (yours will differ).
