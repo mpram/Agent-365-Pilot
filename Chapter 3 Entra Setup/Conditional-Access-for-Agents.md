@@ -67,8 +67,6 @@ flowchart LR
 | `Project` | `Agent365Pilot` | `Agent365Pilot` |
 | `Environment` | `Pilot` | `Pilot` |
 
-> **Payoff:** once both agents carry `Project = Agent365Pilot`, you can change the Step 1 assignment from hand-picked identities to a **filter for agents** rule (`agent.Project -eq "Agent365Pilot"`), and any new pilot agent automatically inherits the policy.
-
 ---
 
 ## Step 3 — Notify the sponsor's manager when sponsorship changes
@@ -191,4 +189,5 @@ The Diagnostic settings → Log Analytics → alert-rule pipeline (Step 5) works
 - [Target agent identities in Conditional Access](https://learn.microsoft.com/en-us/entra/identity/conditional-access/howto-target-agent-identities)
 - [Recommended policies for autonomous agents](https://learn.microsoft.com/en-us/entra/identity/conditional-access/policy-autonomous-agents)
 - [Lifecycle Workflow built-in tasks — Send email to manager about sponsorship changes](https://learn.microsoft.com/en-us/entra/id-governance/lifecycle-workflow-tasks#send-email-to-manager-about-sponsorship-changes)
+
 
