@@ -338,7 +338,7 @@ Repeat the §4.1 + §4.2 flow with these values:
 
 ---
 
-## Step 7: Connect Expense Tracker to Trail Guide *(Optional)*
+## Step 7: Connect Expense Tracker to Trail Guide
 
 > **Note:** Publishing agents requires an **additional license**. The free Copilot Studio trial lets you build and test agents in the test panel, but an eligible license (Microsoft 365 Copilot, or a standalone Copilot Studio tenant + user license) is required to publish.
 
@@ -354,7 +354,7 @@ Repeat the §4.1 + §4.2 flow with these values:
 
 ---
 
-## Step 8: Publish to Microsoft Teams *(Optional)*
+## Step 8: Publish to Microsoft Teams
 
 > **Note:** Publishing agents requires an **additional license**. The free Copilot Studio trial lets you build and test agents in the test panel, but an eligible license (Microsoft 365 Copilot, or a standalone Copilot Studio tenant + user license) is required to publish.
 
@@ -370,49 +370,6 @@ Repeat the §4.1 + §4.2 flow with these values:
 - Prepared a solution that is ready to be shared across your organization or with peers.
 
 ---
-
-## Step 9: Verify the Agent 365 registry
-
-> **Note:** The registry tabs (Overview, Instructions, Capabilities, Actions, Connected agents, Channels) can take up to **30 minutes** to fully populate after publishing. The **Activity** tab usually populates within a minute or so once you start sending prompts.
-
-1. Open **https://admin.cloud.microsoft** → **Agents** → **All agents** (Registry tab).
-2. You should see:
-   - **Wildpaws Trail Guide**: Copilot Studio (the agent itself), **Available**
-   - **Wildpaws Trail Guide**: no Platform tag (the Teams channel registration), **Available**
-   - **Wildpaws Expense Tracker**: Copilot Studio, **Available**
-3. Click the **Copilot Studio** Trail Guide row → verify all tabs populate:
-   - **Overview**: name, description, owner
-   - **Instructions**: your full prompt block
-   - **Capabilities / Knowledge**: Web Search, Lonely Planet, AllTrails, USDA APHIS
-   - **Actions / Tools**: Wildpaws Weather, Wildpaws FX
-   - **Connected agents**: Wildpaws Expense Tracker
-   - **Channels**: Teams
-4. In the **Overview** tab, look for **Request**, select the agent, and you now have the option to publish the agent to the rest of the organization by selecting a **Template** or creating one from scratch directly in Agent 365.
-
-Done. This is the full Agent Registry experience **without a Microsoft 365 Copilot license**.
-
-### Step 9 closing remarks
-
-**What you accomplished:**
-
-- Completed a full end-to-end solution with an agent that includes multiple tools.
-- Connected the agent to another agent, enabling agent-to-agent communication.
-- Shared the solution across the organization, following Power User best practices.
-- Acted as an AI Admin by approving the agent and applying the required organizational templates to ensure compliance.
-- Applied identity and access controls, including conditional access policies, demonstrating the role of an Identity Admin.
-- Prepared the solution for monitoring and observability by triggering prompts.
-- Enabled activity tracking in Agent 365, populating the Activity tab.
-- Verified sign-in logs in Entra for the agent identity `Wildpaws Trail Guide`.
-
-> Note: Logs in Entra Admin Center may take up to 10 minutes to appear.
-
-🎉 Congratulations, you just built a full demo that you can reuse with your customers.
-
----
-
-## Demo script: prompts that exercise EVERY tool, knowledge source, and connected agent
-
-Run these in the in-studio **Test your agent** panel or in the published Teams app. Each section below is designed so the orchestrator picks a specific capability. Watch the **Activity** map or the inline source/tool chips to confirm.
 
 ### Capability to prompt cheat-sheet
 
