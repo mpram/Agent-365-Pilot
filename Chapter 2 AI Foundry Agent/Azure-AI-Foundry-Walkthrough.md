@@ -340,7 +340,7 @@ You'll assign the **`Agent365.Observability.OtelWrite`** app role (id `8f71190c-
 
 **Prerequisites**
 - Azure CLI (`az`) signed in with **Global Admin** or **Application Administrator** permissions.
-- The agent's **Entra Agent ID** (a GUID). Find it in **M365 admin center → Agents → sous-snark → Details → Entra agent ID** (visible in the portal screenshot from Step 9g). It looks like `27b331e6-c395-4559-a3e7-77b2f96d1a7c` (yours will differ).
+- The agent's **Entra Agent ID** (a GUID). Find it in **M365 admin center → Agents → sous-snark → Details → Entra agent ID**.
 
 **Steps (PowerShell)**
 
