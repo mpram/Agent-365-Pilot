@@ -1,0 +1,47 @@
+openapi: 3.0.1
+info:
+  title: Wildpaws Weather
+  description: Free trail weather forecast (Open-Meteo), no authentication.
+  version: 1.0.0
+servers:
+  - url: https://api.open-meteo.com
+paths:
+  /v1/forecast:
+    get:
+      operationId: getForecast
+      summary: Get weather forecast for a location
+      description: Returns weather forecast for a given latitude/longitude.
+      parameters:
+        - name: latitude
+          in: query
+          required: true
+          description: Latitude of the location, e.g. 47.6
+          schema:
+            type: number
+        - name: longitude
+          in: query
+          required: true
+          description: Longitude of the location, e.g. -122.3
+          schema:
+            type: number
+        - name: current
+          in: query
+          required: false
+          description: Comma-separated list of current weather variables.
+          schema:
+            type: string
+            default: temperature_2m,wind_speed_10m,weather_code
+        - name: forecast_days
+          in: query
+          required: false
+          description: Number of forecast days (1-16).
+          schema:
+            type: integer
+            default: 3
+      responses:
+        '200':
+          description: Forecast data
+          content:
+            application/json:
+              schema:
+                type: object

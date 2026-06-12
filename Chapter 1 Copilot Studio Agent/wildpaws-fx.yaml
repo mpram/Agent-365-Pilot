@@ -1,0 +1,39 @@
+openapi: 3.0.1
+info:
+  title: Wildpaws FX
+  description: Free FX rates from the European Central Bank (Frankfurter), no authentication.
+  version: 1.0.0
+servers:
+  - url: https://api.frankfurter.dev
+paths:
+  /v1/latest:
+    get:
+      operationId: getLatestRate
+      summary: Convert one currency to another at the latest rate
+      description: Returns the latest exchange rate from a base currency to one or more target currencies.
+      parameters:
+        - name: amount
+          in: query
+          required: true
+          description: Amount of money to convert, e.g. 100.
+          schema:
+            type: number
+        - name: base
+          in: query
+          required: true
+          description: ISO-4217 base currency code, e.g. USD, EUR, GBP.
+          schema:
+            type: string
+        - name: symbols
+          in: query
+          required: true
+          description: ISO-4217 target currency code, e.g. EUR, INR, JPY. One symbol per call.
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Conversion result
+          content:
+            application/json:
+              schema:
+                type: object
