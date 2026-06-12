@@ -299,7 +299,7 @@ Repeat the §4.1 + §4.2 flow with these values:
 
 ---
 
-## Step 6: Create the connected agent (Wildpaws Expense Tracker) *(Optional)*
+## Step 6: Create the connected agent (Wildpaws Expense Tracker)
 
 > **Note:** Publishing agents requires an **additional license**. The free Copilot Studio trial lets you build and test agents in the test panel, but an eligible license (Microsoft 365 Copilot, or a standalone Copilot Studio tenant + user license) is required to publish.
 
