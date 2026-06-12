@@ -1,6 +1,6 @@
 # 🛡️ Agent 365 — Apply Governance When Publishing the Pilot Agents
 
-> Apply the **Conditional Access policy** and the **custom security attributes** we created in the [Entra-set-up guide](../Entra-set-up/Conditional-Access-for-Agents.md) directly during the **Publish** wizard for the two pilot agents (`Wildpaws Trail Guide` and `Sous Snark`) that are currently **pending approval** in **Requests**.
+> Apply the **Conditional Access policy** and the **custom security attributes** we created in the [Entra-set-up guide](../Chapter%203%20Entra%20Setup/Conditional-Access-for-Agents.md) directly during the **Publish** wizard for the two pilot agents (`Wildpaws Trail Guide` and `Sous Snark`) that are currently **pending approval** in **Requests**.
 
 ## What you'll build
 
@@ -33,7 +33,7 @@ The Publish wizard can only offer policies that are **already created**. Verify 
 1. **Conditional Access:** **Entra admin center → Conditional Access → Policies** → confirm **`Observe – Pilot agents access`** exists and is scoped to **Agents → the pilot agent identities** (at least one agent identity selected, or it won't appear in the wizard picker).
 2. **Custom security attributes:** **Entra admin center → Custom security attributes** → confirm the **`AgentGovernance`** set with **`Project`** and **`Environment`** attributes exists.
 
-> If either is missing, complete the relevant step in the [Conditional Access for Agents guide](../Entra-set-up/Conditional-Access-for-Agents.md) before continuing.
+> If either is missing, complete the relevant step in the [Conditional Access for Agents guide](../Chapter%203%20Entra%20Setup/Conditional-Access-for-Agents.md) before continuing.
 
 ---
 
@@ -64,7 +64,7 @@ The pilot agents are sitting in **Requests / pending approval**. Apply the CA po
 1. **Custom security attributes:** **Entra admin center → Enterprise applications → [agent's `-AgentIdentity` SP] → Custom security attributes** → confirm `Project = Agent365Pilot` and `Environment = Pilot`.
 2. **Conditional Access:** drive a few agent calls in Teams, then **Entra ID → Monitoring → Sign-in logs → Service principal sign-ins** → confirm the **`Observe – Pilot agents access`** policy shows up under the agent's entry (Report-only result).
 
-> Full CA observation + alerting pipeline is covered in the [Conditional Access for Agents guide](../Entra-set-up/Conditional-Access-for-Agents.md) (Steps 4–5).
+> Full CA observation + alerting pipeline is covered in the [Conditional Access for Agents guide](../Chapter%203%20Entra%20Setup/Conditional-Access-for-Agents.md) (Steps 4–5).
 
 ---
 
