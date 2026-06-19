@@ -1,5 +1,7 @@
 # 🐾 Wildpaws Expeditions — Copilot Studio Walkthrough
 
+[🏠 Back to Home](../README.md)
+
 > Using this lab, you will learn how to create a Copilot Studio agent from end to end, including setting up and configuring tools that extend agent capabilities. You will explore how to connect multiple agents together to enable more advanced, orchestrated scenarios, and how to deploy agents so they can be shared and consumed across your organization. The lab also introduces key concepts such as Agent ID and Blueprints, helping you understand how agents are structured and managed at scale. From an AI Admin perspective, you will gain hands on experience applying governance and compliance templates, ensuring your agent aligns with organizational standards while confidently publishing it for broader enterprise use.
 
 **What you'll build:** *Wildpaws Expeditions*, a fictional adventure-travel company for pet owners, gets:
@@ -508,4 +510,8 @@ paths:
         '200':
           description: Conversion result
 ```
+
+---
+
+[🏠 Back to Home](../README.md)
 

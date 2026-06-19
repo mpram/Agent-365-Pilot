@@ -1,5 +1,7 @@
 # 🍽️ Azure AI Foundry Walkthrough
 
+[🏠 Back to Home](../README.md)
+
 > A hands-on tutorial for students. You'll build **Sous Snark**, a passive-aggressive sous-chef agent in **Microsoft Foundry**, equipped with three capabilities:
 >
 > 1. **Bing grounding** live web search for recipes & nutrition facts
@@ -467,6 +469,10 @@ Find me a high-protein dinner under 700 kcal using chicken thighs (search the we
 ```
 
 **Why it's the showstopper demo:** one prompt → **Bing → MCP → Code Interpreter** in sequence. In **Foundry → Traces** you'll see three tool spans in a single conversation turn, and the **Agent 365 → Activity** entry will list all three tool ids. Great closing demo for the workshop.
+
+---
+
+[🏠 Back to Home](../README.md)
 
 
 
