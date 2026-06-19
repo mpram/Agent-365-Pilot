@@ -56,7 +56,12 @@ flowchart LR
 - [Step 7: Connect Expense Tracker to Trail Guide](#step-7-connect-expense-tracker-to-trail-guide)
 - [Step 8: Publish to Microsoft Teams](#step-8-publish-to-microsoft-teams)
 - [Appendix: OpenAPI specs (reference)](#appendix-openapi-specs-reference)
-- [Troubleshooting](#troubleshooting)
+
+---
+
+## Video Tutorial
+
+https://youtu.be/rRAF_gv4ROE
 
 ---
 
@@ -501,34 +506,4 @@ paths:
         '200':
           description: Conversion result
 ```
-
----
-
-## Troubleshooting
-
-### Active users show a scrambled User principal name instead of a real email
-
-When you open **https://admin.cloud.microsoft** → **Agents** → **All agents** → select an agent → **Active users**, the **User principal name** column may show an opaque, scrambled value instead of the real user email, for example:
-
-```
-6NMH17jEj6OiqzZNOPMkuYVmqGl6/tCxtbiQqpyh1r13VW
-```
-
-**Why this happens:** Microsoft 365 *pseudonymizes* (conceals) user, group, and site names in admin reports by default in many tenants. The Agent 365 registry's usage data inherits the same privacy setting, so real identities are replaced with a hashed token. This is a tenant-wide reporting privacy control — it is not specific to agents.
-
-**How to show the real user email:**
-
-> Requires the **Global Administrator** role. The change is tenant-wide and affects all Microsoft 365 admin reports (Usage, Copilot, Agents, etc.).
-
-1. Sign in to the **Microsoft 365 admin center**: **https://admin.cloud.microsoft** (or **https://admin.microsoft.com**).
-2. In the left nav, go to **Settings** → **Org settings**.
-3. On the **Services** tab, select **Reports**.
-4. **Uncheck** the box labeled **"Display concealed user, group, and site names in all reports."**
-5. Click **Save**.
-6. Return to **Agents** → **All agents** → your agent → **Active users**. New activity now resolves to real user principal names (real email addresses).
-
-**Notes:**
-- The setting takes effect going forward; allow a short period (and a page refresh) for the report to repopulate. Activity reports can take **up to 48 hours** to fully reflect the change.
-- To re-enable privacy later, repeat the steps and **re-check** the box.
-- If the **Reports** option or the checkbox is greyed out, confirm your account holds the **Global Administrator** role — other admin roles cannot change this setting.
 
