@@ -6,25 +6,38 @@ A hands-on, end-to-end pilot that takes you from **building two AI agents** to *
 
 This pilot follows two fictional agents through their full lifecycle:
 
-- **Wildpaws Trail Guide** — an adventure-travel concierge built in **Microsoft Copilot Studio**.
-- **Sous Snark** — a passive-aggressive sous-chef agent built in **Microsoft Foundry (Azure AI Foundry)**.
+- **Wildpaws Trail Guide** an adventure-travel concierge built in **Microsoft Copilot Studio**.
+- **Sous Snark** a passive-aggressive sous-chef agent built in **Microsoft Foundry (Azure AI Foundry)**.
 
-You'll build each agent, give it real capabilities (web search, REST tools, code execution, connected sub-agents), then put on your **AI Admin** hat to secure and govern them with **Microsoft Entra** (Conditional Access, custom security attributes, sponsorship lifecycle workflows) and finally **publish them through Microsoft Agent 365** with governance applied at activation time.
-
-By the end you'll understand how agents are created, how **Entra Agent IDs and blueprints** work, and how to apply consistent governance and compliance controls before agents reach your organization.
+You'll build each agent, give it real capabilities (web search, REST tools, code execution, connected sub-agents), then put on your **AI Admin** hat to secure and govern them. Through this journey you'll learn how the Identity team applies guardrails to agents, how the SOC team triages incidents where agent identities are compromised, and how to onboard third-party agents.
 
 ## Chapters
 
 | # | Chapter | What you'll do |
 |---|---------|----------------|
-| 1 | [Copilot Studio Agent](Chapter%201%20Copilot%20Studio%20Agent/COPILOT-STUDIO-WALKTHROUGH.md) | Build **Wildpaws Trail Guide** in Copilot Studio — add knowledge, web search, REST API tools, and a connected sub-agent, then deploy it for your organization. |
+| 1 | [Copilot Studio Agent](Chapter%201%20Copilot%20Studio%20Agent/COPILOT-STUDIO-WALKTHROUGH.md) | Build **Wildpaws Trail Guide** in Copilot Studio add knowledge, web search, REST API tools, and a connected sub-agent, then deploy it for your organization. |
 | 2 | [AI Foundry Agent](Chapter%202%20AI%20Foundry%20Agent/Azure-AI-Foundry-Walkthrough.md) | Build **Sous Snark** in Microsoft Foundry with Bing grounding, Code Interpreter, and custom tools. |
-| 3 | [Agent Identities](Chapter%203%20Entra%20Setup/Conditional-Access-for-Agents.md) | Configure Entra for Agent 365 — Conditional Access (Report-only), custom security attributes, and sponsorship-change lifecycle workflows for the agent identities. |
-| 4 | [Agent 365](Chapter%204%20Agent%20365/Agent-365-Custom-Template.md) | Apply the Entra governance (CA policy + security attributes) while **publishing** both pilot agents through the Agent 365 admin experience. |
+| 3 | [Agent Identities](Chapter%203%20Entra%20Setup/Conditional-Access-for-Agents.md) | Acting as an **Identity Admin**, you will apply guardrails for agent identities; these guardrails will be leveraged by the AI Admin. Configure Entra for Agent 365: Conditional Access (Report-only), custom security attributes, and sponsorship-change lifecycle workflows for the agent identities. |
+| 4 | [Agent 365](Chapter%204%20Agent%20365/Agent-365-Custom-Template.md) | Now acting as the **AI Admin**, let's go through the approval workflow: approve or deny agents and apply policies so they are compliant before the rest of the organization consumes them. |
+| 5 | [Analyzing Agent Logs in Advanced Hunting](Chapter%205%20Advanced%20Hunting/Analyzing-Agent-Logs-in-Advanced-Hunting.md) | Acting as your SOC, let's query and analyze the raw logs using **Advanced Hunting** KQL in the Microsoft Defender portal. |
+| 6 | [Agent 365 Logs in Microsoft Sentinel Data Lake](Chapter%206%20Sentinel%20Data%20Lake/Setting-up-Agent-365-Logs-in-Sentinel-Data-Lake.md) | Set up ingestion of **Agent 365 logs** into the **Microsoft Sentinel Data Lake** for long-term retention and analytics. |
+| 7 | [Triaging Agent Incidents in Defender Portal](Chapter%207%20Defender%20Triage/Triaging-Agent-Incidents-in-Defender-Portal.md) | Investigate and triage **agent-related incidents** in the Microsoft Defender portal. |
+| 8 | Onboarding AWS Agents | 🚧 **Coming soon**: registry sync for 3rd party agents. |
+| 9 | Onboarding Databricks Genie | 🚧 **Coming soon**: registry sync for 3rd party agents. |
+| 10 | Shadow AI Discovery | 🚧 **Coming soon**: discover agents employees are installing locally; allow, deny, or monitor. |
 
 ## Who this is for
 
-- **Makers / developers** building agents in Copilot Studio and Microsoft Foundry (Chapters 1–2).
-- **AI Admins / security teams** governing agent identities and publishing them at enterprise scale (Chapters 3–4).
+- **Developers**
+- **AI Admin**
+- **Security teams**
+- **Cloud CoE**
+- **Identity Admin**
+- **Compliance teams**
 
-> **Pick your scenario.** Start with the **Copilot Studio Agent** and/or the **AI Foundry Agent** — from there you can select which chapters to pilot.
+> **Pick your scenario.** Start with the **Copilot Studio Agent** and/or the **AI Foundry Agent** from there you can select which chapters to pilot.
+
+## Authors
+
+- Marianela Ramsdell
+- Wes Blackwell
