@@ -152,7 +152,7 @@ Near-real-time detections and Advanced Hunting rely on **Agent 365 observability
 ### 5c. Make sure each agent emits observability data
 
 - **`Wildpaws Trail Guide` (Copilot Studio):** sends observability data automatically once the Copilot Studio real-time protection from Step 4b is connected. No extra work.
-- **`Sous Snark` (Foundry):** emits observability data through the **Microsoft Agent 365 SDK**. Confirm the agent code initializes the SDK and that its identity has been published through Agent 365 (Chapter 4), otherwise its events will not reach the `AIAgentsInfo` table.
+- **On-Hold** **`Sous Snark` (Foundry):** emits observability data through the **Microsoft Agent 365 SDK**. Confirm the agent code initializes the SDK and that its identity has been published through Agent 365 (Chapter 4), otherwise its events will not reach the `AIAgentsInfo` table.
 
 ## Verify the connection
 

@@ -2,6 +2,9 @@
 
 A hands-on, end-to-end pilot that takes you from **building two AI agents** to **governing and publishing them as enterprise-ready agents** with Microsoft Agent 365.
 
+> [!IMPORTANT]
+> ⚠️ **Pick your scenario.** Start with the **Copilot Studio Agent** and/or the **AI Foundry Agent** from there you can select which chapters to pilot.
+
 ## Synopsis
 
 This pilot follows two fictional agents through their full lifecycle:
@@ -35,8 +38,6 @@ You'll build each agent, give it real capabilities (web search, REST tools, code
 - **Cloud CoE**
 - **Identity Admin**
 - **Compliance teams**
-
-> **Pick your scenario.** Start with the **Copilot Studio Agent** and/or the **AI Foundry Agent** from there you can select which chapters to pilot.
 
 ## Authors
 
