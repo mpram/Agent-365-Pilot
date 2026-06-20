@@ -57,6 +57,7 @@ flowchart LR
 - [Step 6: Create the connected agent (Wildpaws Expense Tracker)](#step-6-create-the-connected-agent-wildpaws-expense-tracker)
 - [Step 7: Connect Expense Tracker to Trail Guide](#step-7-connect-expense-tracker-to-trail-guide)
 - [Step 8: Publish to Microsoft Teams](#step-8-publish-to-microsoft-teams)
+- [Step 9: AI Administrator view](#step-9-ai-administrator-view)
 - [Appendix: OpenAPI specs (reference)](#appendix-openapi-specs-reference)
 
 ---
@@ -400,18 +401,6 @@ Repeat the §4.1 + §4.2 flow with these values:
 | 17 | **Multi-tool comparison** | "Compare weather in Lisbon vs Barcelona next weekend, and convert 500 EUR into each local currency." |
 | 18 | **Weather + Knowledge** | "What's the weather in Kyoto next Tuesday, and what are the top dog-friendly things to do there?" |
 | 19 | **FX + Knowledge** | "How much is 100 GBP in MXN, and what paperwork do I need to bring my dog into Mexico?" |
-| 20 | **All four capabilities in one prompt** | See **Big finale** below. |
-
-### Big finale: everything in one prompt
-
-> *"I'm planning a 4-day trip from Seattle to Lisbon next week with my border collie. Tell me the weather, what to pack, dog entry rules into Portugal, convert my $2,500 budget into EUR, and after that I want to log a $420 United Airlines ticket I just bought."*
-
-Expected orchestration:
-1. **Wildpaws Weather**: Lisbon, 4-day forecast
-2. **USDA APHIS / Web Search**: dog import rules into Portugal
-3. **Wildpaws FX**: USD 2,500 to EUR
-4. Packing list grounded in weather + Lonely Planet
-5. Hand off to **Wildpaws Expense Tracker** to log the United ticket
 
 ### Conversation-starter shortcuts
 
@@ -421,12 +410,13 @@ The 4 suggested prompts from Step 2 are pre-loaded on the agent's welcome screen
 - **Quick currency check**: fires FX only
 - **Track my trail expenses**: fires connected agent handoff
 
-### Where to watch the orchestration
+---
 
-While the agent runs:
-- **In Copilot Studio Test panel**: source/tool chips appear under each assistant message. Click them to see the actual API call payload.
-- **Activity tab** inside the agent: live tool-call traces.
-- **Agent 365 registry** → https://admin.cloud.microsoft → Agents → Wildpaws Trail Guide → **Activity** tab: enterprise-wide observability of every tool invocation.
+## Step 9: AI Administrator view
+
+Now switch hats to the **AI Administrator** and analyze how the agent landed in the Admin Cloud Portal. Watch the video below to see how **Wildpaws Trail Guide** surfaces in the Agent 365 registry at https://admin.cloud.microsoft.
+
+[![How the agent landed in the Admin Cloud Portal](https://img.youtube.com/vi/s11V1YkLdK4/maxresdefault.jpg)](https://youtu.be/s11V1YkLdK4)
 
 ---
 
