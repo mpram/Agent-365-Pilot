@@ -4,6 +4,16 @@
 
 > Apply the **Conditional Access policy** and the **custom security attributes** we created in the [Entra-set-up guide](../Chapter%203%20Entra%20Setup/Agents%20Identities.md) directly during the **Publish** wizard for the two pilot agents (`Wildpaws Trail Guide` and `Sous Snark`) that are currently **pending approval** in **Requests**.
 
+---
+
+## Video Tutorial
+
+[![Watch the video tutorial](https://img.youtube.com/vi/2fbyMzj-Z2Q/maxresdefault.jpg)](https://youtu.be/2fbyMzj-Z2Q)
+
+> ▶️ [Watch the walkthrough on YouTube](https://youtu.be/2fbyMzj-Z2Q)
+
+---
+
 ## What you'll build
 
 ```mermaid
