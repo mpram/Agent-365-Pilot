@@ -64,9 +64,9 @@ flowchart LR
 
 ## Video Tutorial
 
-[![Watch the video tutorial](https://img.youtube.com/vi/rRAF_gv4ROE/maxresdefault.jpg)](https://youtu.be/rRAF_gv4ROE)
+[![Watch the video tutorial](https://img.youtube.com/vi/cJQHdQHyJx8/maxresdefault.jpg)](https://youtu.be/cJQHdQHyJx8)
 
-> ▶️ [Watch the walkthrough on YouTube](https://youtu.be/rRAF_gv4ROE)
+> ▶️ [Watch the walkthrough on YouTube](https://youtu.be/cJQHdQHyJx8)
 
 ---
 
