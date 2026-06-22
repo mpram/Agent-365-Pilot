@@ -140,9 +140,9 @@ For the pilot we drive the run manually after staging the attribute change:
 
 ## Video Tutorial
 
-[![Watch the video tutorial](https://img.youtube.com/vi/y1Gpzx7D9Po/maxresdefault.jpg)](https://youtu.be/y1Gpzx7D9Po)
+[![Watch the video tutorial](https://img.youtube.com/vi/E2FINPUJIcc/maxresdefault.jpg)](https://youtu.be/E2FINPUJIcc)
 
-> ▶️ [Watch the walkthrough on YouTube](https://youtu.be/y1Gpzx7D9Po)
+> ▶️ [Watch the walkthrough on YouTube](https://youtu.be/E2FINPUJIcc)
 
 ---
 
