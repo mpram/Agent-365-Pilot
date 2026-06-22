@@ -15,6 +15,7 @@
 ## 📑 Index
 
 - [What you'll build](#️-what-youll-build)
+- [Video Tutorial](#video-tutorial)
 - [Step 1 — Create the Foundry resource from the Azure Portal](#step-1-create-the-foundry-resource-from-the-azure-portal)
 - [Step 2 — Deploy a model](#step-2-deploy-a-model)
 - [Step 3 — Create the Sous Snark agent](#step-3-create-the-sous-snark-agent)
@@ -39,6 +40,14 @@ flowchart LR
   T2 --> P[Python sandbox]
   T3 --> D[External knowledge]
 ```
+
+---
+
+## Video Tutorial
+
+[![Watch the video tutorial](https://img.youtube.com/vi/y1Gpzx7D9Po/maxresdefault.jpg)](https://youtu.be/y1Gpzx7D9Po)
+
+> ▶️ [Watch the walkthrough on YouTube](https://youtu.be/y1Gpzx7D9Po)
 
 ---
 
