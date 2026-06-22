@@ -138,6 +138,14 @@ For the pilot we drive the run manually after staging the attribute change:
 
 ---
 
+## Video Tutorial
+
+[![Watch the video tutorial](https://img.youtube.com/vi/y1Gpzx7D9Po/maxresdefault.jpg)](https://youtu.be/y1Gpzx7D9Po)
+
+> ▶️ [Watch the walkthrough on YouTube](https://youtu.be/y1Gpzx7D9Po)
+
+---
+
 ## Appendix: Does this apply to Copilot Studio agents?
 
 **Yes**, with important differences from Foundry hosted agents.
