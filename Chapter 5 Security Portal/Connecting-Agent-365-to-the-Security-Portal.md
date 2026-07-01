@@ -4,6 +4,14 @@
 
 > To gain full visibility into your AI agents and proactively detect misconfigurations, suspicious activity, and runtime threats, you connect **Agent 365** to the **Security portal** (Microsoft Defender). Once connected, Defender treats your two pilot agents (`Wildpaws Trail Guide` and `Sous Snark`) as first-class security principals: it surfaces their posture, raises near-real-time alerts, blocks unsafe tool invocations at runtime, and feeds Agent 365 observability data into Advanced Hunting for the SOC chapters that follow.
 
+## Video Tutorial
+
+[![Watch the video tutorial](https://img.youtube.com/vi/ASNNfV_wLaw/maxresdefault.jpg)](https://youtu.be/ASNNfV_wLaw)
+
+> ▶️ [Watch the walkthrough on YouTube](https://youtu.be/ASNNfV_wLaw)
+
+---
+
 ## Index
 
 - [What you'll build](#what-youll-build)
