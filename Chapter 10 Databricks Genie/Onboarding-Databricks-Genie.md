@@ -20,6 +20,7 @@
 - [Step 2: Grant the service principal admin access to the workspace](#step-2-grant-the-service-principal-admin-access-to-the-workspace)
 - [Step 3: Connect Databricks Genie in Registry sync](#step-3-connect-databricks-genie-in-registry-sync)
 - [Step 4: Sync and review the imported agents](#step-4-sync-and-review-the-imported-agents)
+- [Step 5: Install Databricks Genie from the AI Marketplace and configure it in Teams](#step-5-install-databricks-genie-from-the-ai-marketplace-and-configure-it-in-teams)
 - [Verify the connection](#verify-the-connection)
 - [Reference](#reference)
 
@@ -30,6 +31,9 @@ flowchart LR
   G["Databricks Genie space"] -->|Service principal credentials| RS["Registry sync connector"]
   RS --> AR["Agent 365 agent registry"]
   AR --> GOV["Inventory, posture, and governance actions"]
+  MP["Databricks Genie app (AI Marketplace)"] -->|Install| AR
+  AR -->|Deploy to users| T["Microsoft Teams / Copilot chat"]
+  T -->|Configure workspace + Genie space| G
 ```
 
 By the end of this chapter:
@@ -37,6 +41,8 @@ By the end of this chapter:
 - Databricks Genie is a **connected platform** in Agent 365 Registry sync.
 - Genie agents show up in the **Agent 365 agent registry**, alongside `Wildpaws Trail Guide` and `Sous Snark`.
 - The AI Admin can monitor sync status and apply the governance actions the Databricks API supports, all from the Microsoft 365 admin center.
+- The **Databricks Genie** app is installed from the AI Marketplace and made available to end users in Teams and Microsoft 365 Copilot.
+- End users **configure** the app with their Databricks workspace and Genie space, then chat with their data directly in Teams.
 
 > **Preview note:** Registry sync is a **preview** feature. It isn't intended for production use yet and is covered by the [supplemental terms of use](https://learn.microsoft.com/legal/microsoft-365/supplemental-terms) for previews.
 
@@ -93,18 +99,47 @@ Registry sync needs the service principal to have admin access in the target wor
    - Synchronization results (including any errors to resolve)
 4. Repeat **Sync agents** any time you add or change Genie spaces in Databricks. Scheduled, automatic syncs are planned for a future release.
 
+## Step 5: Install Databricks Genie from the AI Marketplace and configure it in Teams
+
+Registry sync (Steps 1-4) gives the AI Admin **visibility and governance** over Genie agents that already run in Databricks. To let end users actually **chat** with Genie inside Microsoft 365, install the **Databricks Genie** app from the AI Marketplace, then have each user connect it to their workspace.
+
+### 5a. Install the app from the AI Marketplace
+
+1. Open the [Microsoft 365 admin center](https://admin.microsoft.com/Adminportal/Home#/homepage).
+2. In the navigation pane, select **Agents** > **Marketplace**.
+3. Search for **Databricks Genie** and select the app card. It's published by **Databricks Inc.** as a **Third party** agent.
+4. Review the **About this agent** details, including the description, publisher, and permissions, then select **Get it now** (or **Install**).
+5. Choose which users or groups the app is **available to**, and optionally which users have it **pre-installed**, then confirm the install.
+6. Once installed, the app appears in **Agents** > **All agents**, with **Publisher type: Third party**, **Publisher: Databricks Inc.**, and channel icons for **Teams** and **Microsoft 365 Copilot**.
+
+> This install step is a Marketplace deployment for **end-user consumption**, separate from the Registry sync connection in Steps 1-4, which exists purely for **admin visibility and governance**. Both can be used together: Registry sync tracks the Genie spaces running in Databricks, while the Marketplace app gives users a chat surface in Teams and Copilot.
+
+### 5b. Configure the app for a chat in Teams
+
+1. In **Microsoft Teams**, open a chat with the **Databricks Genie** app (search for it in the app bar or **Apps** if it isn't pinned yet).
+2. Send any message. The agent replies with **"Connect your Databricks workspace and Genie Agent for this chat"** and a **Configure** button.
+3. Select **Configure** and provide:
+   - The **Databricks workspace URL** to connect to.
+   - The **Genie space** (or Genie Agent) to route questions to for this chat.
+4. Save the configuration. Each Teams chat or channel can be connected to a different Genie space, so different teams can pin the space relevant to their data domain.
+5. Ask a question in natural language, for example "What are our top 5 customers by total spend?". Databricks Genie answers **inside Teams**, citing its sources (the **Genie Space** and the underlying **SQL Query**/**Query Result**).
+
 ## Verify the connection
 
 - The Databricks connection shows a **Last sync status** of success on the **Registry sync** page.
 - Your Genie agent(s) now appear in the Agent 365 **agent registry**, listed alongside your Copilot Studio and Foundry pilot agents.
 - Selecting a synced Genie agent shows its basic metadata and the governance actions currently supported by the Databricks API.
+- The **Databricks Genie** Marketplace app shows **Available** in **Agents** > **All agents**, with channel icons for **Teams** and **Microsoft 365 Copilot**.
+- In Teams, a configured chat answers data questions and shows **Sources** (Genie Space and SQL Query) under each response.
 
-With Databricks Genie synced into the registry, the AI Admin now has one inventory that spans Copilot Studio, Foundry, and Databricks, ready for the same governance and security workflows covered in earlier chapters.
+With Databricks Genie synced into the registry and installed for end users, the AI Admin has one inventory that spans Copilot Studio, Foundry, and Databricks, and end users have a governed way to chat with their Databricks data directly in Teams.
 
 ## Reference
 
 - [Registry sync in the Microsoft 365 agent registry (preview)](https://learn.microsoft.com/microsoft-agent-365/admin/agent-registry)
 - [Connect existing agents to Microsoft Agent 365](https://learn.microsoft.com/microsoft-agent-365/connect-existing-agents)
+- [Governance and Lifecycle actions for agents (Install, Uninstall, Block)](https://learn.microsoft.com/microsoft-365/admin/manage/agent-actions)
+- [Manage agent registry in Microsoft 365 admin center (Marketplace)](https://learn.microsoft.com/microsoft-365/admin/manage/agent-registry)
 - [Databricks service principals](https://docs.databricks.com/)
 - [Overview of Microsoft Agent 365](https://learn.microsoft.com/microsoft-agent-365/overview)
 
