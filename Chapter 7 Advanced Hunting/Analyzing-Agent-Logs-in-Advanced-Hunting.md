@@ -4,6 +4,10 @@
 
 > Now that **Agent 365** is connected to Microsoft Defender (see [Chapter 5](../Chapter%205%20Security%20Portal/Connecting-Agent-365-to-the-Security-Portal.md)), agent observability data flows into **Advanced Hunting**. Acting as the **SOC**, you'll write **KQL** queries to inventory your agents, review their activity and tool invocations, and proactively hunt for suspicious behavior across the two pilot agents (`Wildpaws Trail Guide` and `Sous Snark`). When you find a query worth keeping, you'll save it and promote it to a **custom detection rule** so Defender alerts you automatically.
 
+## Video Tutorial
+
+[![Watch the video tutorial](https://img.youtube.com/vi/Yli7HmG56Mc/maxresdefault.jpg)](https://youtu.be/Yli7HmG56Mc)
+
 ## Index
 
 - [What you'll build](#what-youll-build)
