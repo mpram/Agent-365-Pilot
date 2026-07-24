@@ -27,7 +27,7 @@ You'll build each agent, give it real capabilities (web search, REST tools, code
 | 7 | [Analyzing Agent Logs in Advanced Hunting](Chapter%207%20Advanced%20Hunting/Analyzing-Agent-Logs-in-Advanced-Hunting.md) | Acting as your SOC, let's query and analyze the raw logs using **Advanced Hunting** KQL in the Microsoft Defender portal. | [Watch](https://youtu.be/Yli7HmG56Mc) | 6:40 |
 | 8 | [Agent 365 Logs in Microsoft Sentinel Data Lake](Chapter%208%20Sentinel%20Data%20Lake/Setting-up-Agent-365-Logs-in-Sentinel-Data-Lake.md) | 🚧 **Work in Progress**: Set up ingestion of **Agent 365 logs** into the **Microsoft Sentinel Data Lake** for long-term retention and analytics. | | |
 | 9 | [Triaging Agent Incidents in Defender Portal](Chapter%209%20Defender%20Triage/Triaging-Agent-Incidents-in-Defender-Portal.md) | 🚧 **Work in Progress**: Investigate and triage **agent-related incidents** in the Microsoft Defender portal. | | |
-| 10 | [Onboarding Databricks Genie](Chapter%2010%20Databricks%20Genie/Onboarding-Databricks-Genie.md) | Connect **Databricks Genie** to Agent 365 using **Registry sync**, so Genie agents show up in the agent registry for centralized visibility and governance. | [Watch](https://youtu.be/0GdsjFWNP5s) | |
+| 10 | [Onboarding Databricks Genie](Chapter%2010%20Databricks%20Genie/Onboarding-Databricks-Genie.md) | Connect **Databricks Genie** to Agent 365 using **Registry sync**, so Genie agents show up in the agent registry for centralized visibility and governance. | [Watch](https://youtu.be/0GdsjFWNP5s) | 6:41 |
 | 11 | Onboarding AWS Agents | 🚧 **Coming soon**: registry sync for 3rd party agents. | | |
 | 12 | Shadow AI Discovery | 🚧 **Coming soon**: discover agents employees are installing locally; allow, deny, or monitor. | | |
 
