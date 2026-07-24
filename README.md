@@ -16,6 +16,8 @@ You'll build each agent, give it real capabilities (web search, REST tools, code
 
 ## Chapters
 
+> **Total video length:** ~1h 17m (10 videos across 7 chapters currently published)
+
 | # | Chapter | What you'll do | Video | Length (mm:ss) |
 |---|---------|----------------|-------|----------------|
 | 1 | [Copilot Studio Agent](Chapter%201%20Copilot%20Studio%20Agent/COPILOT-STUDIO-WALKTHROUGH.md) | Build **Wildpaws Trail Guide** in Copilot Studio add knowledge, web search, REST API tools, and a connected sub-agent, then deploy it for your organization. | **Part 1:** [Watch](https://youtu.be/cJQHdQHyJx8)<br>**Part 2:** [Watch](https://youtu.be/s11V1YkLdK4) | **Part 1:** 17:48<br>**Part 2:** 2:00 |
