@@ -16,9 +16,9 @@ You'll build each agent, give it real capabilities (web search, REST tools, code
 
 ## Chapters
 
-| # | Chapter | What you'll do | Video | Length |
-|---|---------|----------------|-------|--------|
-| 1 | [Copilot Studio Agent](Chapter%201%20Copilot%20Studio%20Agent/COPILOT-STUDIO-WALKTHROUGH.md) | Build **Wildpaws Trail Guide** in Copilot Studio add knowledge, web search, REST API tools, and a connected sub-agent, then deploy it for your organization. | [Watch part 1](https://youtu.be/cJQHdQHyJx8)<br>[Watch part 2](https://youtu.be/s11V1YkLdK4) | 17:48<br>2:00 |
+| # | Chapter | What you'll do | Video | Length (mm:ss) |
+|---|---------|----------------|-------|----------------|
+| 1 | [Copilot Studio Agent](Chapter%201%20Copilot%20Studio%20Agent/COPILOT-STUDIO-WALKTHROUGH.md) | Build **Wildpaws Trail Guide** in Copilot Studio add knowledge, web search, REST API tools, and a connected sub-agent, then deploy it for your organization. | **Part 1:** [Watch](https://youtu.be/cJQHdQHyJx8)<br>**Part 2:** [Watch](https://youtu.be/s11V1YkLdK4) | **Part 1:** 17:48<br>**Part 2:** 2:00 |
 | 2 | [AI Foundry Agent](Chapter%202%20AI%20Foundry%20Agent/Azure-AI-Foundry-Walkthrough.md) | Build **Sous Snark** in Microsoft Foundry with Bing grounding, Code Interpreter, and custom tools. | | |
 | 3 | [Agent Identities](Chapter%203%20Entra%20Setup/Agents%20Identities.md) | Acting as an **Identity Admin**, you will apply guardrails for agent identities; these guardrails will be leveraged by the AI Admin. Configure Entra for Agent 365: Conditional Access (Report-only), custom security attributes, and sponsorship-change lifecycle workflows for the agent identities. | | |
 | 4 | [Agent 365](Chapter%204%20Agent%20365/Agent-365-Custom-Template.md) | Now acting as the **AI Admin**, let's go through the approval workflow: approve or deny agents and apply policies so they are compliant before the rest of the organization consumes them. | | |
