@@ -30,9 +30,8 @@ You'll build each agent, give it real capabilities (web search, REST tools, code
 | 8 | [Agent 365 Logs in Microsoft Sentinel Data Lake](Chapter%208%20Sentinel%20Data%20Lake/Setting-up-Agent-365-Logs-in-Sentinel-Data-Lake.md) | 🚧 **Work in Progress**: Set up ingestion of **Agent 365 logs** into the **Microsoft Sentinel Data Lake** for long-term retention and analytics. | | |
 | 9 | [Triaging Agent Incidents in Defender Portal](Chapter%209%20Defender%20Triage/Triaging-Agent-Incidents-in-Defender-Portal.md) | 🚧 **Work in Progress**: Investigate and triage **agent-related incidents** in the Microsoft Defender portal. | | |
 | 10 | [Onboarding Databricks Genie](Chapter%2010%20Databricks%20Genie/Onboarding-Databricks-Genie.md) | Connect **Databricks Genie** to Agent 365 using **Registry sync**, so Genie agents show up in the agent registry for centralized visibility and governance. | [Watch](https://youtu.be/0GdsjFWNP5s) | 6:41 |
-| 11 | [Shadow AI Discovery](Chapter%2011%20Shadow%20AI%20Discovery/Discovering-Shadow-AI-Agents.md) | 🚧 **Work in Progress**: discover agents employees are installing locally; allow, deny, or monitor. | | |
-| 12 | [Onboarding Google Vertex Agents](Chapter%2012%20Google%20Vertex%20Agents/Onboarding-Google-Vertex-Agents.md) | 🚧 **Work in Progress**: connect **Google Vertex AI** agents to Agent 365 using **Registry sync**, so Vertex agents show up in the agent registry for centralized visibility and governance. | | |
-| 13 | Onboarding AWS Agents | 🚧 **Coming soon**: registry sync for 3rd party agents. | | |
+| 11 | Onboarding AWS Agents | 🚧 **Coming soon**: registry sync for 3rd party agents. | | |
+| 12 | [Shadow AI Discovery](Chapter%2012%20Shadow%20AI%20Discovery/Discovering-Shadow-AI-Agents.md) | 🚧 **Work in Progress**: discover agents employees are installing locally; allow, deny, or monitor. | | |
 
 ## Who this is for
 
