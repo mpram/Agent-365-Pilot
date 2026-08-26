@@ -5,8 +5,6 @@
 > [!WARNING]
 > 🚧 **Work in Progress.** This chapter is being finalized. Steps and screenshots may change.
 
-> **Google Vertex AI** agents run inside your Google Cloud project, outside the Microsoft ecosystem. To bring them under the same governance umbrella as `Wildpaws Trail Guide` and `Sous Snark`, you connect Google Vertex AI to **Agent 365** using **Registry sync**. This pulls the agents' metadata into the Agent 365 agent registry for centralized visibility and governance, without moving or redeploying anything in Google Cloud.
-
 > [!NOTE]
 > This chapter assumes your Vertex AI agents **already exist** in the pilot project. Agents must be deployed as **Vertex AI Agent Engine (Reasoning Engines)**, because the Registry sync connector discovers them through the `aiplatform.reasoningEngines.*` APIs. Agents that are not reasoning engines (for example, raw Gemini API calls or Dialogflow flows) do not appear in the registry.
 
