@@ -14,6 +14,10 @@ This pilot follows two fictional agents through their full lifecycle:
 
 You'll build each agent, give it real capabilities (web search, REST tools, code execution, connected sub-agents), then put on your **AI Admin** hat to secure and govern them. Through this journey you'll learn how the Identity team applies guardrails to agents, how the SOC team triages incidents where agent identities are compromised, and how to onboard third-party agents.
 
+## Pilot Task / Role / Success Plan
+
+📄 [**Pilot Task / Role / Success Plan**](Pilot-Task-Role-Success-Plan.pdf) — a per-task plan covering the roles, controls, effort estimates, before/after state, and success criteria for every chapter of the pilot.
+
 ## Chapters
 
 > **Total video length:** ~1h 17m (10 videos across 7 chapters currently published)
