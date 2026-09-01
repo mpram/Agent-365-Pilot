@@ -120,9 +120,6 @@ This writes a `a365-sync-key.json` file. You'll paste its **entire contents** in
 10. Select **Verify authentication**.
 11. Select **Save** to create the connection.
 
-> [!IMPORTANT]
-> The **Secret access key** field expects the **complete JSON key file**, from the opening `{` through the closing `}`, not just the `private_key` value and not a partial selection. Pasting only part of the file returns **"Invalid service account JSON format."** Open the file, select all (Ctrl+A), copy, and paste the whole object.
-
 ## Step 5: Sync and review the imported agents
 
 1. On the **Connected platforms** page, select your new Google Vertex AI connection.
