@@ -47,7 +47,9 @@ You'll build each agent, give it real capabilities (web search, REST tools, code
 - Identity Admin
 - Compliance teams
 
-## Authors
+## Authors & Contributors
 
 - Marianela Ramsdell
 - Wes Blackwell
+- Harikumar H
+- Matthew Governale
