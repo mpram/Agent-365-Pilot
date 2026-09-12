@@ -3,10 +3,10 @@
 [🏠 Back to Home](../README.md)
 
 > [!WARNING]
-> 🚧 **Work in Progress.** This chapter is being finalized. Steps and screenshots may change.
+> 🚧 Work in Progress. This chapter is being finalized. Steps and screenshots may change.
 
 > [!NOTE]
-> This chapter assumes your Vertex AI agents **already exist** in the pilot project. Agents must be deployed as **Vertex AI Agent Engine (Reasoning Engines)**, because the Registry sync connector discovers them through the `aiplatform.reasoningEngines.*` APIs. Agents that are not reasoning engines (for example, raw Gemini API calls or Dialogflow flows) do not appear in the registry.
+> This chapter assumes your Vertex AI agents already exist in the pilot project. Agents must be deployed as Vertex AI Agent Engine (Reasoning Engines), because the Registry sync connector discovers them through the `aiplatform.reasoningEngines.*` APIs. Agents that are not reasoning engines (for example, raw Gemini API calls or Dialogflow flows) do not appear in the registry.
 
 ---
 
@@ -33,29 +33,29 @@ flowchart LR
 
 By the end of this chapter:
 
-- Google Vertex AI is a **connected platform** in Agent 365 Registry sync.
-- Your Vertex agents show up in the **Agent 365 agent registry**, alongside `Wildpaws Trail Guide` and `Sous Snark`.
+- Google Vertex AI is a connected platform in Agent 365 Registry sync.
+- Your Vertex agents show up in the Agent 365 agent registry, alongside `Wildpaws Trail Guide` and `Sous Snark`.
 - The AI Admin can monitor sync status and apply the governance actions the Vertex AI API supports, all from the Microsoft 365 admin center.
 
 ## Prerequisites
 
-- Your organization is **onboarded to Microsoft Agent 365** (see [Chapter 4: Agent 365](../Chapter%204%20Agent%20365/Agent-365-Custom-Template.md)).
-- A Microsoft 365 admin role that can manage the agent registry (for example, **Global Administrator**).
-- A **Google Cloud project** with existing Vertex AI agents deployed as **Agent Engine (Reasoning Engines)**, and IAM permission to create a service account and role in that project.
-- The **Vertex AI API** (`aiplatform.googleapis.com`) enabled on the project.
+- Your organization is onboarded to Microsoft Agent 365 (see [Chapter 4: Agent 365](../Chapter%204%20Agent%20365/Agent-365-Custom-Template.md)).
+- A Microsoft 365 admin role that can manage the agent registry (for example, Global Administrator).
+- A Google Cloud project with existing Vertex AI agents deployed as Agent Engine (Reasoning Engines), and IAM permission to create a service account and role in that project.
+- The Vertex AI API (`aiplatform.googleapis.com`) enabled on the project.
 - The following values from your Google Cloud project, which you'll enter in Registry sync:
-  - **Google Cloud region** where the agents are deployed (for example, `us-central1` / "US Central").
-  - **Vertex AI project ID** (for example, `a365-vertex-agicku`).
-  - A **service account JSON key** (created in Steps 1-3).
-- *(Optional)* The **Google Cloud CLI** (`gcloud`) if you prefer to create the service account, role, and key from the command line instead of the Cloud Console.
+  - Google Cloud region where the agents are deployed (for example, `us-central1` / "US Central").
+  - Vertex AI project ID (for example, `a365-vertex-agicku`).
+  - A service account JSON key (created in Steps 1-3).
+- *(Optional)* The Google Cloud CLI (`gcloud`) if you prefer to create the service account, role, and key from the command line instead of the Cloud Console.
 
 ## Step 1: Create a Google Cloud service account
 
 Registry sync authenticates to Google Cloud as a service account, not a user, so create one dedicated to this connection.
 
-**Console:** In the Google Cloud Console, go to **IAM & Admin** > **Service Accounts** > **+ Create service account**. Name it, for example, `a365-registry-sync`, then **Create and continue**.
+Console: In the Google Cloud Console, go to IAM & Admin > Service Accounts > + Create service account. Name it, for example, `a365-registry-sync`, then Create and continue.
 
-**CLI:**
+CLI:
 
 ```powershell
 gcloud iam service-accounts create a365-registry-sync `
@@ -65,11 +65,11 @@ gcloud iam service-accounts create a365-registry-sync `
 
 ## Step 2: Grant the service account the required role
 
-The connector needs to **list**, **get**, and **delete** reasoning engines. You can grant either the predefined role or a least-privilege custom role.
+The connector needs to list, get, and delete reasoning engines. You can grant either the predefined role or a least-privilege custom role.
 
-**Option A - Predefined role (simplest):** assign **Vertex AI Administrator** (`roles/aiplatform.admin`) to the service account.
+Option A - Predefined role (simplest): assign Vertex AI Administrator (`roles/aiplatform.admin`) to the service account.
 
-**Option B - Least-privilege custom role (recommended):** create a custom role that contains only the three permissions the connector uses, then bind it to the service account. This is preferred because the key leaves Google Cloud and is stored in Agent 365.
+Option B - Least-privilege custom role (recommended): create a custom role that contains only the three permissions the connector uses, then bind it to the service account. This is preferred because the key leaves Google Cloud and is stored in Agent 365.
 
 ```powershell
 # Create the least-privilege custom role
@@ -99,42 +99,42 @@ gcloud iam service-accounts keys create a365-sync-key.json `
   --iam-account=a365-registry-sync@<PROJECT_ID>.iam.gserviceaccount.com
 ```
 
-This writes a `a365-sync-key.json` file. You'll paste its **entire contents** into Registry sync in the next step.
+This writes a `a365-sync-key.json` file. You'll paste its entire contents into Registry sync in the next step.
 
 > [!CAUTION]
-> This JSON key is a **live credential**. Keep it out of source control and shared folders, and rotate or delete it when the pilot is done. In the Cloud Console you can create the same key under the service account's **Keys** tab > **Add key** > **Create new key** > **JSON**.
+> This JSON key is a live credential. Keep it out of source control and shared folders, and rotate or delete it when the pilot is done. In the Cloud Console you can create the same key under the service account's Keys tab > Add key > Create new key > JSON.
 
 ## Step 4: Connect Google Vertex AI in Registry sync
 
 1. Open the [Microsoft 365 admin center](https://admin.microsoft.com/Adminportal/Home#/homepage).
-2. In the navigation pane, select **Agents** > **All Agents** to open the agent registry.
-3. In the **Connected platforms** web part, select **Manage**.
-4. Select **+ Connect a platform**.
-5. Enter a connection **Name** (for example, `Vertex Pilot`) and a short **Description**.
-6. For **External platform**, select **Google Vertex AI**.
-7. Select the **Region** where your agents are deployed (for example, **US Central**).
-8. Choose whether to **import agents automatically** (**Never** or **On a schedule**).
-9. Under **Authentication** (method: **API key**), enter:
-   - **Project Id** - your Vertex AI project ID (for example, `a365-vertex-agicku`).
-   - **Secret access key** - the **entire contents** of the service account JSON key file from Step 3.
-10. Select **Verify authentication**.
-11. Select **Save** to create the connection.
+2. In the navigation pane, select Agents > All Agents to open the agent registry.
+3. In the Connected platforms web part, select Manage.
+4. Select + Connect a platform.
+5. Enter a connection Name (for example, `Vertex Pilot`) and a short Description.
+6. For External platform, select Google Vertex AI.
+7. Select the Region where your agents are deployed (for example, US Central).
+8. Choose whether to import agents automatically (Never or On a schedule).
+9. Under Authentication (method: API key), enter:
+   - Project Id - your Vertex AI project ID (for example, `a365-vertex-agicku`).
+   - Secret access key - the entire contents of the service account JSON key file from Step 3.
+10. Select Verify authentication.
+11. Select Save to create the connection.
 
 ## Step 5: Sync and review the imported agents
 
-1. On the **Connected platforms** page, select your new Google Vertex AI connection.
-2. Select **Sync agents** to trigger the first synchronization.
+1. On the Connected platforms page, select your new Google Vertex AI connection.
+2. Select Sync agents to trigger the first synchronization.
 3. Open the connection's details to review:
    - Platform provider and region
    - Last run date and last sync status
    - Total synced agents
    - Synchronization results (including any errors to resolve)
-4. Repeat **Sync agents** whenever you add or change agents in Vertex AI. Scheduled, automatic syncs are planned for a future release.
+4. Repeat Sync agents whenever you add or change agents in Vertex AI. Scheduled, automatic syncs are planned for a future release.
 
 ## Verify the connection
 
-- The Google Vertex AI connection shows a **Last sync status** of success on the **Connected platforms** page.
-- Your Vertex agents now appear in the Agent 365 **agent registry**, listed alongside your Copilot Studio and Foundry pilot agents.
+- The Google Vertex AI connection shows a Last sync status of success on the Connected platforms page.
+- Your Vertex agents now appear in the Agent 365 agent registry, listed alongside your Copilot Studio and Foundry pilot agents.
 - Selecting a synced agent shows its basic metadata and the governance actions currently supported by the Vertex AI API.
 
 ## Reference

@@ -22,7 +22,6 @@ This chapter assumes Snowflake and your Cortex Agents already exist.
   - [Step 4: Install the app from the AI Marketplace](#step-4-install-the-app-from-the-ai-marketplace)
   - [Step 5: Configure the app for a chat in Teams](#step-5-configure-the-app-for-a-chat-in-teams)
 - [Verify the setup](#verify-the-setup)
-- [Clean up](#clean-up)
 - [Reference](#reference)
 
 ## What you'll build
@@ -105,8 +104,6 @@ GRANT ROLE AGENT365_SYNC_ROLE TO USER SVC_AGENT365;
   openssl rsa -in svc_agent365_key.p8 -pubout -out svc_agent365_key.pub
   ```
 
-> Security: the `.p8` private key is a credential. Keep it in a secrets vault or a protected local path, never commit it to source control or paste it into shared docs or chat. Only the public key is safe to share. Add `*.p8` (and `*.pub`) to your `.gitignore` if you generate keys inside a repo folder.
-
 Register the public key on the service user, the single base64 line from `$pub` (or the body of the `.pub` file), with no `-----BEGIN/END-----` lines and no line breaks:
 
 ```sql
@@ -120,14 +117,6 @@ DESC USER SVC_AGENT365;   -- confirm RSA_PUBLIC_KEY_FP is now populated
 SELECT CURRENT_ORGANIZATION_NAME() AS org, CURRENT_ACCOUNT_NAME() AS account;
 -- Account identifier = <org>-<account>, for example MYORG-MYACCOUNT
 ```
-
-> Bearer-token alternative (quick tests only): instead of the RSA key, generate a scoped, expiring programmatic access token and choose Bearer Token in the form. The token secret is shown only once:
->
-> ```sql
-> ALTER USER SVC_AGENT365 ADD PROGRAMMATIC ACCESS TOKEN AGENT365_PAT
->   ROLE_RESTRICTION = AGENT365_SYNC_ROLE
->   DAYS_TO_EXPIRY = 90;
-> ```
 
 ### Step 2: Connect the Snowflake AI platform
 
@@ -179,21 +168,6 @@ Connected platforms (Option 1) gives the AI Admin visibility and governance over
 - In Teams, a configured chat answers a data question and shows Sources under the response.
 
 With Snowflake synced into the registry and installed for end users, the AI Admin has one inventory that spans Copilot Studio, Foundry, Databricks, and Snowflake, and end users have a governed way to chat with their Snowflake data directly in Teams.
-
-## Clean up
-
-To undo the onboarding without touching the customer's Snowflake data:
-
-- Delete the Snowflake connection from Connected platforms in the Microsoft 365 admin center.
-- Uninstall the Snowflake Cortex Agents Marketplace app if you no longer want it available to users.
-- In Snowflake, revoke the connector's access:
-
-  ```sql
-  USE ROLE ACCOUNTADMIN;
-  ALTER USER SVC_AGENT365 REMOVE PROGRAMMATIC ACCESS TOKEN AGENT365_PAT;   -- only if you created a Bearer token
-  DROP USER IF EXISTS SVC_AGENT365;
-  DROP ROLE IF EXISTS AGENT365_SYNC_ROLE;
-  ```
 
 ## Reference
 
