@@ -83,7 +83,7 @@ Coverage matrix - which policy protects which agent:
    - Compliance Administrator
    - Purview Workload Content Admin
    - Teams Administrator
-5. Confirm all three appear under the user's role list.
+5. In Microsoft Purview, go to Settings → Roles and scopes → Role groups (`https://purview.microsoft.com/settings/purviewpermissions`). Add your admin to the Communication Compliance role group and the Insider Risk Management role group (Insider Risk administrator), which you need to create the policies in Steps 9 and 10.
 
 ---
 
@@ -110,7 +110,7 @@ Publish two labels that both agent scenarios will reuse.
    - Create label → Don't create a policy yet
 4. Back on the labels list → select both labels → Publish labels.
 5. Wizard defaults through, at Users and Groups you can leave `All users` or scope to your admin, name the policy `Wildpaws + Sous Snark labels`, Review and submit.
-6. Confirm the new policy appears under Label policies.
+6. Confirm the new policy appears under Label publishing policies.
 
 ---
 
@@ -121,7 +121,7 @@ This is what will stop Wildpaws Trail Guide from surfacing the VIP roster during
 1. Purview → Solutions → Data Loss Prevention → Policies → + Create policy.
 2. Enterprise applications and devices.
 3. Categories: Custom. Regulations: Custom. Next.
-4. Name: `Block Copilot on Confidential`. Description: optional. Next.
+4. Name: `Block Copilot Studio agent on Confidential`. Description: optional. Next.
 5. Admin units: default. Next.
 6. Locations: deselect everything except `Microsoft 365 Copilot` and `Copilot Chat`. Next.
 7. Policy settings → Create or customize advanced DLP rules → Next.
@@ -139,7 +139,7 @@ This is what will stop Wildpaws Trail Guide from surfacing the VIP roster during
 
 Wildpaws will get an Outlook tool in Step 7. This policy is what makes the "email the invoice to my personal address" demo fail. Exchange scope also protects any Foundry tool that sends mail on Sous Snark's behalf.
 
-1. Purview → DLP → Policies → + Create policy.
+1. Purview → Solutions → Data Loss Prevention → Policies → + Create policy.
 2. Enterprise applications and devices → categories Custom, regulations Custom → Next.
 3. Name: `Block email of financial PII`. Next through Admin units.
 4. Locations: deselect everything except `Exchange email`. Next.
@@ -276,7 +276,8 @@ This single policy watches Wildpaws (Copilot Studio) and Sous Snark (Foundry) fo
 2. Template dropdown → Detect unethical interactions for AI agents.
 3. Agents to supervise: check Copilot Studio and Azure Foundry.
 4. Reviewers: add yourself.
-5. Create policy.
+5. Accept the default values in the Choose Conditions and Review Percentage screen and click Next.
+6. Create policy.
 
 ---
 
@@ -295,7 +296,7 @@ Run these against a fresh Teams / M365 Copilot session as a standard user (not t
 
 Critical: use the right surface. For every Wildpaws DLP prompt below, chat `@Wildpaws Trail Guide` inside M365 Copilot (Teams left rail → Copilot icon, or https://m365.cloud.microsoft), not the standalone Wildpaws bot app. DLP for M365 Copilot only enforces on the M365 Copilot orchestrator; the standalone bot runs the Copilot Studio orchestrator and bypasses DLP #1. This single mistake is the most common reason the demo "doesn't work."
 
-What a successful DLP #1 block actually looks like. It is not a hard "access denied" error. Per Microsoft's design, the labeled file still appears as a citation, but its content is withheld: the agent gives only a generic, non-content description of the file and tells you to open it directly for details. A correct block = no actual confidential values in the response (no names, amounts, card numbers), plus a matching event in Purview → Data Loss Prevention → Alerts ("Block Copilot on Confidential" / "Deny grounding on Confidential"). If you see those two things, DLP #1 is working even though the agent still names and cites the file. A leak = the agent prints the actual sensitive fields.
+What a successful DLP #1 block actually looks like. It is not a hard "access denied" error. Per Microsoft's design, the labeled file still appears as a citation, but its content is withheld: the agent gives only a generic, non-content description of the file and tells you to open it directly for details. A correct block = no actual confidential values in the response (no names, amounts, card numbers), plus a matching event in Purview → Data Loss Prevention → Alerts ("Block Copilot Studio agent on Confidential" / "Deny grounding on Confidential"). If you see those two things, DLP #1 is working even though the agent still names and cites the file. A leak = the agent prints the actual sensitive fields.
 
 What a successful DLP #2 block actually looks like. DLP #2 is an Exchange email rule, not a Copilot rule, so the proof is on the send path, not in the chat. When the agent's Outlook `Send an email (v2)` action tries to send a body that carries financial identifiers (credit card, U.S. Bank Account Number, or ABA routing number), the send fails and the mail is never delivered, and Purview logs a "DLP policy match for email with subject '...'" alert under Purview → Data Loss Prevention → Alerts. In this pilot the confirmed alert was subject "Banff Basecamp Lodge Invoice Details for Payment", sensitive info types U.S. Bank Account Number and ABA Routing Number, matching the financial-data rule. A correct block = the email does not send and a matching email DLP alert appears; a leak = the message is delivered.
 
@@ -368,7 +369,7 @@ The `AccessedResources` array is the key. For each file the agent touched it inc
 | `Name`, `SiteUrl`, `Type`, `ID` | Which file (your `Wildpaws_Trip_Deposits_Ledger.xlsx`) |
 | `SensitivityLabelId` | It matched the Confidential label GUID (`defa4170-0d19-0005-0006-...`) |
 | `Action` | read / create / modify |
-| `PolicyDetails` (PolicyId, PolicyName, rules) | The DLP restriction that fired, for example `Block Copilot on Confidential` |
+| `PolicyDetails` (PolicyId, PolicyName, rules) | The DLP restriction that fired, for example `Block Copilot Studio agent on Confidential` |
 | `Status` | success or failure of that access |
 | `XPIADetected` | prompt-injection flag on the resource |
 | `AgentId` | Identifies the agent, for example `CopilotStudio.Declarative.<guid>` or `CopilotStudio.CustomEngine.<guid>` |
