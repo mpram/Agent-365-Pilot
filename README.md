@@ -36,6 +36,7 @@ You'll build each agent, give it real capabilities (web search, REST tools, code
 | 10 | [Shadow AI Discovery](Chapter%2011%20Shadow%20AI%20Discovery/Discovering-Shadow-AI-Agents.md) | 🚧 **Work in Progress**: discover agents employees are installing locally; allow, deny, or monitor. | | |
 | 11 | [Onboarding Google Vertex Agents](Chapter%2012%20Google%20Vertex%20Agents/Onboarding-Google-Vertex-Agents.md) | 🚧 **Work in Progress**: connect **Google Vertex AI** agents to Agent 365 using **Registry sync**, so Vertex agents show up in the agent registry for centralized visibility and governance. | | |
 | 12 | Onboarding AWS Agents | 🚧 **Coming soon**: registry sync for 3rd party agents. | | |
+| 14 | [Onboarding Snowflake Cortex Agents](Chapter%2014%20Snowflake%20Cortex%20Agents/Onboarding-Snowflake-Cortex-Agents.md) | Connect **Snowflake Cortex Agents** to Agent 365 two ways: **Connected platforms (Snowflake AI)** sync for governance, and the **Snowflake Cortex Agents** Marketplace app for end-user chat in Teams. | | |
 
 ## Who this is for
 
