@@ -152,12 +152,16 @@ Connected platforms (Option 1) gives the AI Admin visibility and governance over
 ### Step 5: Configure the app for a chat in Teams
 
 1. In Microsoft Teams, open a chat with the Snowflake Cortex Agents app (search for it in the app bar or Apps if it isn't pinned yet). Newly deployed apps can take time to appear in Teams.
-2. Send any message. The agent prompts you to connect your Snowflake account and choose an agent for this chat.
-3. Select Configure and provide:
-   - Your Snowflake account URL.
-   - Sign in (the app uses your Snowflake identity), then select which Cortex Agent to route this chat to, for example Sales Analytics.
-4. Save the configuration. Different Teams chats or channels can point to different agents, so a sales channel can use Sales Analytics and a support channel can use Support Knowledge.
-5. Ask a question in natural language, for example *"What was total revenue by region?"*. The Cortex Agent answers inside Teams, citing its sources (semantic view or search results).
+2. Enter `config` in the chat to start the account connection flow. Sign in with your organizational Microsoft account. If Snowflake has not yet been configured for your Microsoft organization, select **I'm the Snowflake administrator**, enter the Snowflake account URL, and select **Connect Snowflake account**. Use the account that actually hosts the Cortex Agents, for example `https://<orgname>-<account>.snowflakecomputing.com`.
+3. Enter `choose agent` in the chat. Select the Cortex Agent to use, for example Sales Analytics. If no agents are listed, confirm that you connected the correct Snowflake account and that the signed-in user's default Snowflake role has `USAGE` on the warehouse, database, schema, and agent objects.
+4. Ask a question in natural language, for example *"What was total revenue by region?"*. The Cortex Agent answers inside Teams, citing its sources (semantic view or search results).
+
+Other useful chat commands include:
+
+- `show configured accounts`: List the Snowflake accounts connected to the app.
+- `add account`: Connect another Snowflake account.
+- `choose agent`: Switch to another available Cortex Agent.
+- `logout`: End the current Snowflake session so you can authenticate again after changing a user's default role or account access.
 
 ## Verify the setup
 
