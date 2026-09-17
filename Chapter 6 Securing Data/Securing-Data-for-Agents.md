@@ -112,6 +112,9 @@ Publish two labels that both agent scenarios will reuse.
 5. Wizard defaults through, at Users and Groups you can leave `All users` or scope to your admin, name the policy `Wildpaws + Sous Snark labels`, Review and submit.
 6. Confirm the new policy appears under Label publishing policies.
 
+> [!WARNING]
+> This label publishing policy can take up to **24 hours** to take effect across your tenant. Wait 24 hours before testing.
+
 ---
 
 ## Step 3: DLP #1 - block Copilot from processing Confidential content
@@ -132,6 +135,9 @@ This is what will stop Wildpaws Trail Guide from surfacing the VIP roster during
    - Actions → + Add an action → Restrict Copilot from processing content → check `Accessing knowledge sources`
    - Next
 9. Turn on policy immediately → Next → Review and submit.
+
+> [!WARNING]
+> This DLP policy can take up to **24 hours** to take effect. Wait 24 hours before testing.
 
 ---
 
@@ -279,6 +285,9 @@ This single policy watches Wildpaws (Copilot Studio) and Sous Snark (Foundry) fo
 5. Accept the default values in the Choose Conditions and Review Percentage screen and click Next.
 6. Create policy.
 
+> [!WARNING]
+> This Communication Compliance policy can take up to **24 hours** to take effect. Wait 24 hours before testing.
+
 ---
 
 ## Step 10: Confirm Insider Risk Management default agent policy
@@ -287,6 +296,9 @@ This single policy watches Wildpaws (Copilot Studio) and Sous Snark (Foundry) fo
 2. Switch to the Agent policies view.
 3. Confirm Default policy for agents is listed and enabled.
 4. No changes needed - this policy already covers all registered agents, including Wildpaws and Sous Snark once they appear in the Agent 365 registry (Chapter 4).
+
+> [!WARNING]
+> This agent policy can take up to **24 hours** to take effect. Wait 24 hours before testing.
 
 ---
 
